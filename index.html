@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="Day For Sale — claim a date, leave your message, and become part of a permanent internet archive." />
+  <meta property="og:title" content="Day For Sale" />
+  <meta property="og:description" content="Every day is for sale. Claim a date from £1 and leave your message in the archive forever." />
+  <title>Day For Sale — Every day is for sale</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Day For Sale home">
+      <span class="brand-words">DAY<br>FOR SALE</span>
+      <span class="brand-sun" aria-hidden="true"></span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#dates">Browse dates</a>
+      <a href="#auctions">Auctions</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#archive">Archive</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-button" id="openSearch" type="button" aria-label="Search dates">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
+      </button>
+      <button class="button button-dark small" type="button" data-scroll-to-dates>Claim a day</button>
+      <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <a href="#dates">Browse dates</a>
+      <a href="#auctions">Auctions</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#archive">Archive</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow">ONE DATE. ONE MESSAGE. FOREVER.</p>
+        <h1>Every day<br>is for sale<span class="dot">.</span></h1>
+        <p class="hero-intro">Pick a date. Leave your message. When the day arrives, we’ll share it with the world. Then it lives in the archive forever.</p>
+        <div class="hero-actions">
+          <button class="button button-yellow" type="button" data-scroll-to-dates>Claim a day for £1 <span>→</span></button>
+          <a class="button button-outline" href="#auctions">View special days</a>
+        </div>
+        <div class="hero-proof" aria-label="Launch information">
+          <span class="proof-number" id="heroClaimedCount">8</span>
+          <span>launch days already claimed by Day For Sale.</span>
+          <span class="proof-separator"></span>
+          <span>No fake customers. No fake bids.</span>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="sun-orbit"></div>
+        <div class="poster poster-main">
+          <span class="poster-kicker">DAY FOR SALE</span>
+          <strong>SAME DAYS.<br>BIGGER STORIES.</strong>
+          <span class="poster-rule"></span>
+          <small>REAL PEOPLE. LASTING STORIES.</small>
+        </div>
+        <div class="poster poster-blue">
+          <span>2027</span>
+          <strong>365</strong>
+          <small>chances to say something</small>
+        </div>
+        <div class="poster poster-mint">A brighter internet,<br>one day at a time.</div>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="Key proposition">
+      <div class="ticker-track">
+        <span>ORDINARY DAYS £1</span><i></i><span>SPECIAL DAYS BY AUCTION</span><i></i><span>ONE MESSAGE PER DATE</span><i></i><span>ARCHIVED FOREVER</span><i></i><span>ORDINARY DAYS £1</span><i></i><span>SPECIAL DAYS BY AUCTION</span>
+      </div>
+    </section>
+
+    <section class="dates-section shell" id="dates">
+      <div class="section-heading split-heading">
+        <div>
+          <p class="eyebrow">THE 2027 CALENDAR</p>
+          <h2>Find your day.</h2>
+        </div>
+        <p>Blue dates are available for £1. Yellow dates are special-day auctions. Black dates have already been claimed.</p>
+      </div>
+
+      <div class="calendar-shell">
+        <div class="calendar-main">
+          <div class="calendar-toolbar">
+            <button class="month-arrow" id="prevMonth" type="button" aria-label="Previous month">←</button>
+            <div>
+              <span class="calendar-year">2027</span>
+              <h3 id="monthTitle">January</h3>
+            </div>
+            <button class="month-arrow" id="nextMonth" type="button" aria-label="Next month">→</button>
+          </div>
+          <div class="weekdays" aria-hidden="true">
+            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+          </div>
+          <div class="calendar-grid" id="calendarGrid" aria-live="polite"></div>
+          <div class="calendar-legend">
+            <span><i class="legend-dot available"></i>Available — £1</span>
+            <span><i class="legend-dot auction"></i>Auction</span>
+            <span><i class="legend-dot claimed"></i>Claimed</span>
+          </div>
+        </div>
+
+        <aside class="year-card">
+          <span class="status-pill">NOW OPEN</span>
+          <p class="year-number">2027</p>
+          <h3><span id="claimedCount">8</span> of 365 days claimed</h3>
+          <div class="progress"><span id="yearProgress" style="width:2.2%"></span></div>
+          <p><strong id="daysLeft">357 days still available</strong><br>Get in early. Most dates are only £1.</p>
+          <button class="button button-blue full" id="browseAllDates" type="button">Browse all 2027 dates →</button>
+          <div class="next-year">
+            <div><span>2028</span><strong>Coming later</strong></div>
+            <p>We’ll open the next year as the archive grows.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="auctions-section" id="auctions">
+      <div class="shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">SPECIAL DAYS</p>
+            <h2>Some dates mean more.</h2>
+          </div>
+          <p>We won’t decide what the biggest dates are worth. Every special-day auction starts at £1. The market decides.</p>
+        </div>
+
+        <div class="auction-grid">
+          <article class="auction-card">
+            <div class="auction-art christmas"><span>25</span><small>DEC</small></div>
+            <div class="auction-copy">
+              <span class="status-pill">AUCTION</span>
+              <h3>Christmas Day</h3>
+              <p>25 December 2027</p>
+              <div class="auction-meta"><span>Starts at</span><strong>£1</strong></div>
+              <button class="text-link" type="button" data-auction-date="2027-12-25">See auction →</button>
+            </div>
+          </article>
+
+          <article class="auction-card">
+            <div class="auction-art valentine"><span class="heart-icon">♡</span><small>14 FEB</small></div>
+            <div class="auction-copy">
+              <span class="status-pill">AUCTION</span>
+              <h3>Valentine’s Day</h3>
+              <p>14 February 2027</p>
+              <div class="auction-meta"><span>Starts at</span><strong>£1</strong></div>
+              <button class="text-link" type="button" data-auction-date="2027-02-14">See auction →</button>
+            </div>
+          </article>
+
+          <article class="auction-card">
+            <div class="auction-art newyear"><span>31</span><small>DEC</small></div>
+            <div class="auction-copy">
+              <span class="status-pill">AUCTION</span>
+              <h3>New Year’s Eve</h3>
+              <p>31 December 2027</p>
+              <div class="auction-meta"><span>Starts at</span><strong>£1</strong></div>
+              <button class="text-link" type="button" data-auction-date="2027-12-31">See auction →</button>
+            </div>
+          </article>
+
+          <article class="auction-card">
+            <div class="auction-art halloween"><span>31</span><small>OCT</small></div>
+            <div class="auction-copy">
+              <span class="status-pill">AUCTION</span>
+              <h3>Halloween</h3>
+              <p>31 October 2027</p>
+              <div class="auction-meta"><span>Starts at</span><strong>£1</strong></div>
+              <button class="text-link" type="button" data-auction-date="2027-10-31">See auction →</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-section shell" id="how-it-works">
+      <div class="section-heading">
+        <p class="eyebrow">HOW IT WORKS</p>
+        <h2>Buy a tiny piece of internet history.</h2>
+      </div>
+      <div class="steps-grid">
+        <article><span>01</span><h3>Choose a date</h3><p>Most days cost £1. Pick something meaningful — or just claim a random Tuesday because you can.</p></article>
+        <article><span>02</span><h3>Leave your message</h3><p>A dedication, a joke, a business, a memory, an announcement. It’s your space, within our content rules.</p></article>
+        <article><span>03</span><h3>Wait for your day</h3><p>When the date arrives, we’ll publish your message across Day For Sale and our social channels.</p></article>
+        <article><span>04</span><h3>Stay forever</h3><p>Afterwards your page joins the permanent archive, ready to revisit and share for years to come.</p></article>
+      </div>
+    </section>
+
+    <section class="archive-section" id="archive">
+      <div class="shell archive-shell">
+        <div class="archive-copy">
+          <p class="eyebrow">THE ARCHIVE</p>
+          <h2>Today’s message.<br>Tomorrow’s history.</h2>
+          <p>Day For Sale is designed to grow year after year. Browse a single date through time, revisit old messages, and see what people thought was worth saying.</p>
+          <a class="button button-yellow" href="#launch-messages">See the first claimed days →</a>
+        </div>
+        <div class="archive-stack" id="launch-messages">
+          <article class="archive-card"><span>02 JAN 2027</span><strong>“I bought a Saturday on the internet. Sensible.”</strong><small>— Day For Sale launch message</small></article>
+          <article class="archive-card"><span>17 MAR 2027</span><strong>“A pigeon from Birmingham would like the record to show: no regrets.”</strong><small>— Day For Sale launch message</small></article>
+          <article class="archive-card"><span>06 JUN 2027</span><strong>“The internet has made worse purchasing decisions.”</strong><small>— Day For Sale launch message</small></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta shell">
+      <div>
+        <p class="eyebrow">2027 IS OPEN</p>
+        <h2>There are only 365 of them.</h2>
+      </div>
+      <button class="button button-dark" type="button" data-scroll-to-dates>Find your day →</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-top">
+      <a class="brand footer-brand" href="#top" aria-label="Day For Sale home">
+        <span class="brand-words">DAY<br>FOR SALE</span><span class="brand-sun" aria-hidden="true"></span>
+      </a>
+      <p>A brighter internet, one day at a time.</p>
+      <nav aria-label="Footer navigation"><a href="#how-it-works">About</a><a href="#dates">Dates</a><a href="#auctions">Auctions</a><a href="#archive">Archive</a></nav>
+    </div>
+    <div class="shell footer-bottom"><span>© 2026 Day For Sale</span><span>An <strong>A Brighter Internet</strong> project.</span></div>
+  </footer>
+
+  <dialog class="day-modal" id="dayModal">
+    <button class="modal-close" id="closeModal" type="button" aria-label="Close">×</button>
+    <p class="eyebrow" id="modalEyebrow">AVAILABLE DATE</p>
+    <h2 id="modalDate">1 January 2027</h2>
+    <div id="modalBody"></div>
+  </dialog>
+
+  <dialog class="search-modal" id="searchModal">
+    <button class="modal-close" id="closeSearch" type="button" aria-label="Close">×</button>
+    <p class="eyebrow">FIND A DATE</p>
+    <h2>Search 2027.</h2>
+    <label class="search-label" for="dateSearch">Choose a date</label>
+    <input id="dateSearch" type="date" min="2027-01-01" max="2027-12-31" />
+    <button class="button button-blue full" id="searchDateButton" type="button">Show this date →</button>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
