@@ -2,6 +2,14 @@
 
 A working product model for **Buy A Day** — pick a date, leave a message, become the featured message on that day, then remain in a permanent archive.
 
+## Product vision and design direction
+
+**Buy A Day** should feel like a playful but simple way to own the message on one calendar date: choose an available day, leave something worth remembering and keep a permanent shareable page. One featured message per date is the central rule. Ordinary dates cost £1; genuinely selected special dates can be auctioned from £1. Founding/house messages must never be presented as paid customer proof.
+
+**Visual identity:** bold, optimistic, internet-native and intentionally different from a conventional auction website. The existing UI uses charcoal/ink `#0b0d10`, sunshine yellow `#ffd42a`, strong blue `#0b6cff`, mint `#dff9eb` and a white canvas; heavy black sans-serif display lettering with Inter interface type; expressive calendar graphics and confident, uncomplicated CTAs. Parent-brand credit: **An A Brighter Internet project.**
+
+**Future direction:** preserve the browser prototype, then — if the product is reactivated — add shared authoritative dates/bids, verified purchases and auction authorisations, server-controlled closing, moderation and transactional email **before** inviting real buyers. No live-money claims while state remains in localStorage. Broad marketplace/social expansion is not the next milestone. See [PROJECT.md](PROJECT.md) and [AGENTS.md](AGENTS.md).
+
 ## Product model
 
 - Ordinary dates: **£1**
